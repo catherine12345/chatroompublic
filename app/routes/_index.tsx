@@ -61,7 +61,7 @@ export default function Index() {
       </Form>
       <ul>
         {data.messages.map((message) => (
-          <li>
+          <li key={message.id}>
             {message.message}<br />
             {editFocus !== message.id && <button onClick={() => setEditFocus(message.id)}>Edit</button>}
             {editFocus === message.id && (
@@ -87,3 +87,8 @@ export async function loader({ request }) {
 
   return json({ messages });
 }
+
+
+
+
+
